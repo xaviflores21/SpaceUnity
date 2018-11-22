@@ -10,6 +10,7 @@ public class contacto : MonoBehaviour {
 
     void Start()
     {
+        
         GameObject moverObject = GameObject.FindGameObjectWithTag("GameController");
         if (moverObject != null)
         {
@@ -23,7 +24,7 @@ public class contacto : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Limite" || other.tag == "Enemigo")
+        /*if (other.tag == "Limite" || other.tag == "Enemigo")
         {
             return;
         }
@@ -31,9 +32,10 @@ public class contacto : MonoBehaviour {
         if (explosion != null)
         {
             Instantiate(explosion, transform.position, transform.rotation);
-        }
+        }*/
 
-        Destroy(other.gameObject);
-        Destroy(gameObject);
+        print("entro");
+        Destroy(explosion);
+        //Destroy(gameObject);
     }
 }

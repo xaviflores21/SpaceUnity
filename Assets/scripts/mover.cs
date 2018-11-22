@@ -6,14 +6,19 @@ public class mover : MonoBehaviour {
 
     // Use this for initialization
     public float velocidad;
+    public Rigidbody rigibody;
 
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = transform.forward * velocidad;
+        rigibody = GetComponent<Rigidbody>();
+        rigibody.velocity = transform.forward * velocidad;
+        
     }
 
     // Update is called once per frame
     void Update () {
 		
 	}
+
+    
 }

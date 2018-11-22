@@ -5,6 +5,7 @@ using UnityEngine;
 public class moverObstaculos : MonoBehaviour {
 
     public GameObject[] obtaculos;
+    GameObject obt;
     public Vector3 valorIncial;
     public int contarObtaculos;
     public float pausa;
@@ -28,7 +29,7 @@ public class moverObstaculos : MonoBehaviour {
         {
             for (int i = 0; i < contarObtaculos; i++)
             {
-                GameObject obt = obtaculos[Random.Range(0, obtaculos.Length)];
+                obt = obtaculos[Random.Range(0, obtaculos.Length)];
                 Vector3 posicion = new Vector3(Random.Range(-valorIncial.x, valorIncial.x), valorIncial.y, valorIncial.z);
                 Quaternion rotacion = Quaternion.identity;
                 Instantiate(obt, posicion, rotacion);
@@ -37,5 +38,20 @@ public class moverObstaculos : MonoBehaviour {
             yield return new WaitForSeconds(esperar);
 
         }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        /*if (other.tag == "Limite" || other.tag == "Enemigo")
+        {
+            return;
+        }
+
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+        }*/
+        print("dgfdsf");
+
+        Destroy(obt);
     }
 }

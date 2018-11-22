@@ -42,9 +42,23 @@ public class controlarJugador : MonoBehaviour {
             Mathf.Clamp(GetComponent<Rigidbody>().position.z, limite.zMinimo, limite.zMaximo)
         );
 
-        GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -inclinacion);
+        //GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -inclinacion);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        /*if (other.tag == "Limite" || other.tag == "Enemigo")
+        {
+            return;
+        }
 
+        if (explosion != null)
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+        }*/
+        print("dgfdsf");
+
+        Destroy(disparar);
+    }
 }
 
